@@ -11,7 +11,7 @@ class passwordrotate(
   }]] $vault_users = [
     {
       user  => 'root',
-      frequency => 'daily'
+      frequency => 'monthly'
     }
   ]
 ){
