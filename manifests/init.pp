@@ -80,7 +80,9 @@ VAULT_TOKEN=${vault_token}
           description => $description
         }
       }
-      default: {}
+      default: {
+        fail("${value[frequency]} please choose one of hourly, daily, weekly, or monthly.")
+      }
     }
   }
 }
