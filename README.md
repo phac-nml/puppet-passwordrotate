@@ -92,7 +92,7 @@ Default:
 [
     {
         "user": "root",
-        "frequency": "daily",
+        "frequency": "monthly",
     },
 ]
 ```
