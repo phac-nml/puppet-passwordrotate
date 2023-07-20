@@ -40,7 +40,7 @@ After that, simply run puppet to have password rotation enabled.
 
 ## Usage
 
-Simply declare the vault token and address and any users if applicable.
+Simply declare the vault token, vault address, and any users if applicable.
 
 ### Examples:
 
