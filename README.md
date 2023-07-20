@@ -17,7 +17,6 @@ This module enables LAPS-like password rotation on Linux using Hashicorp Vault.
 
 ### What passwordrotate affects
 
-* Modifies `/etc/environment` to permanently add environment variable for `VAULT_ADDR` and `VAULT_TOKEN`.
 * Adds new file to `/etc/cron.d/` for every user with rotating passwords
 * Adds `rotate_linux_password` script to `/usr/local/sbin`
 * Automatically installs `jq` if it is not already present
