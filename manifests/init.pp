@@ -81,7 +81,7 @@ VAULT_TOKEN=${vault_token}
         }
       }
       default: {
-        err("${value[frequency]} please choose one of hourly, daily, weekly, or monthly.")
+        err("${value[frequency]} is not valid. Please choose one of hourly, daily, weekly, or monthly.")
       }
     }
   }
