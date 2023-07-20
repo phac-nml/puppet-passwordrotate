@@ -20,18 +20,13 @@ class passwordrotate(
   # dependency of the rotate_linux_password script
   stdlib::ensure_packages(['jq'], {'ensure' => 'present'})
 
-  # specify VAULT_ADDR environment variable
-  file_line { 'vault_addr_env_var':
-    ensure => present,
-    line   => "export VAULT_ADDR=${vault_addr}",
-    path   => '/etc/environment',
-  }
-
-  # specify VAULT_TOKEN environment variable
-  file_line { 'vault_token_env_var':
-    ensure => present,
-    line   => "export VAULT_TOKEN=${vault_token}",
-    path   => '/etc/environment',
+  file { '/root/vault_info':
+    ensure  => present,
+    path    => '/root/vault_info',
+    mode    => '0400',
+    content => "VAULT_ADDR=${vault_addr}
+VAULT_TOKEN=${vault_token}
+",
   }
 
   # add rotate_linux_password script to path
@@ -39,7 +34,7 @@ class passwordrotate(
   file { '/usr/local/bin/rotate_linux_password':
     ensure => 'file',
     path   => '/usr/local/sbin/rotate_linux_password',
-    mode   => '0700',
+    mode   => '0500',
     source => 'puppet:///modules/passwordrotate/rotate_linux_password'
   }
 
